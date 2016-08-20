@@ -5,6 +5,8 @@
  */
 package algoritmos;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Lorenzo
@@ -28,12 +30,6 @@ public class Ejercicio1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtPersonaUno = new javax.swing.JTextField();
-        txtPersonaDos = new javax.swing.JTextField();
-        txtPersonaTres = new javax.swing.JTextField();
         cmdCalcular = new javax.swing.JButton();
         txtResPersonaUno = new javax.swing.JTextField();
         txtResPersonaDos = new javax.swing.JTextField();
@@ -42,25 +38,19 @@ public class Ejercicio1 extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        cmdBorrar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        txtCantidad = new javax.swing.JTextField();
+        xx = new javax.swing.JLabel();
+        vv = new javax.swing.JLabel();
+        nn = new javax.swing.JLabel();
+        txtPersonaUno = new javax.swing.JTextField();
+        txtPersonaDos = new javax.swing.JTextField();
+        txtPersonaTres = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Persona Uno");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 80, 30));
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Persona Dos");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 80, 30));
-
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Persona Tres");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 100, 30));
-        jPanel1.add(txtPersonaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 70, -1));
-        jPanel1.add(txtPersonaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 70, 20));
-        jPanel1.add(txtPersonaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 70, -1));
 
         cmdCalcular.setText("Calcular");
         cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -68,16 +58,16 @@ public class Ejercicio1 extends javax.swing.JFrame {
                 cmdCalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
 
         txtResPersonaUno.setEditable(false);
-        jPanel1.add(txtResPersonaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 70, -1));
+        jPanel1.add(txtResPersonaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 70, -1));
 
         txtResPersonaDos.setEditable(false);
-        jPanel1.add(txtResPersonaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 70, -1));
+        jPanel1.add(txtResPersonaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 70, -1));
 
         txtResPersonaTres.setEditable(false);
-        jPanel1.add(txtResPersonaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 70, -1));
+        jPanel1.add(txtResPersonaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 70, -1));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("PORCENTAJE DE EMPRESA");
@@ -85,34 +75,187 @@ public class Ejercicio1 extends javax.swing.JFrame {
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Persona Uno");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 90, 30));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 90, 30));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Persona Dos");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 200, 70, 20));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 70, 30));
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Persona Tres");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 194, 80, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 80, 30));
+
+        cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
+
+        jLabel8.setText("Cantidad Invertida");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 100, 30));
+
+        txtCantidad.setEditable(false);
+        txtCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidadKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 80, -1));
+
+        xx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        xx.setText("Persona Uno");
+        jPanel1.add(xx, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 44, 80, 30));
+
+        vv.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        vv.setText("Persona Dos");
+        jPanel1.add(vv, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 100, 30));
+
+        nn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nn.setText("Persona Tres");
+        jPanel1.add(nn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 34, 90, 40));
+
+        txtPersonaUno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPersonaUnoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPersonaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 60, -1));
+
+        txtPersonaDos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPersonaDosKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPersonaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 60, -1));
+
+        txtPersonaTres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPersonaTresKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPersonaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 60, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
-        String per1,per2,per3,res;
-        double p1,p2,p3,porc;
+        String cant,res1,res2,res3;
+        double p1,p2,p3,res=0,op1=0,op2=0,op3=0; 
+        
+        if(txtPersonaUno.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite Valor de la Persona Uno", "Error",JOptionPane.ERROR_MESSAGE);
+            txtPersonaUno.requestFocusInWindow();
+        }
+        else if(txtPersonaDos.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite Valor de la Persona Dos", "Error", JOptionPane.ERROR_MESSAGE);
+            txtPersonaDos.requestFocusInWindow();
+        
+        }else if(txtPersonaTres.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite Valor de la Persona Tres");
+        }
+        
+      
+        else{  
+        p1=Double.parseDouble(txtPersonaUno.getText());
+        p2=Double.parseDouble(txtPersonaDos.getText());
+        p3=Double.parseDouble(txtPersonaTres.getText());
+        
+            
+        if(p2==p1){JOptionPane.showMessageDialog(this, "Digite Un Valor Diferente En La Casilla", "ERROR", JOptionPane.ERROR_MESSAGE);
+                txtPersonaUno.requestFocusInWindow();
+            }
+            else if(p3==p2){JOptionPane.showMessageDialog(this, "Digite Un Valor Diferente En la Casilla ", "ERROR",JOptionPane.ERROR_MESSAGE);
+            txtPersonaDos.requestFocusInWindow();
+                
+            }
+            else if(p3==p1){JOptionPane.showMessageDialog(this, "Digite Un Valor Diferente En La Casilla", "ERROR",JOptionPane.ERROR_MESSAGE);
+            txtPersonaTres.requestFocusInWindow();
+                
+            }else{
+                
+                
+            }
+        res=p1+p2+p3;
+        op1=(p1*100)/res;
+        op2=(p2*100)/res;
+        op3=(p3*100)/res;
+        
+        
+    
+                }
+        
+        cant=String.valueOf(res);
+        txtCantidad.setText(cant);
+        res1=String.valueOf(op1+"%");
+        txtResPersonaUno.setText(res1);
+        res2=String.valueOf(op2+"%");
+        txtResPersonaDos.setText(res2);
+        res3=String.valueOf(op3+"%");
+        txtResPersonaTres.setText(res3);
+        
+        
     }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+      txtPersonaUno.setText("");
+      txtPersonaDos.setText("");
+      txtPersonaTres.setText("");
+      txtCantidad.setText("");
+      txtResPersonaUno.setText("");
+      txtResPersonaDos.setText("");
+      txtResPersonaTres.setText("");
+      
+      txtPersonaUno.requestFocusInWindow();
+       
+       
+    }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void txtCantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadKeyTyped
+      
+    }//GEN-LAST:event_txtCantidadKeyTyped
+
+    private void txtPersonaUnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersonaUnoKeyTyped
+       char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); }
+    }//GEN-LAST:event_txtPersonaUnoKeyTyped
+
+    private void txtPersonaDosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersonaDosKeyTyped
+        char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); }
+    }//GEN-LAST:event_txtPersonaDosKeyTyped
+
+    private void txtPersonaTresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersonaTresKeyTyped
+       char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); }
+    }//GEN-LAST:event_txtPersonaTresKeyTyped
 
     /**
      * @param args the command line arguments
@@ -150,20 +293,23 @@ public class Ejercicio1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdBorrar;
     private javax.swing.JButton cmdCalcular;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel nn;
+    private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextField txtPersonaDos;
     private javax.swing.JTextField txtPersonaTres;
     private javax.swing.JTextField txtPersonaUno;
     private javax.swing.JTextField txtResPersonaDos;
     private javax.swing.JTextField txtResPersonaTres;
     private javax.swing.JTextField txtResPersonaUno;
+    private javax.swing.JLabel vv;
+    private javax.swing.JLabel xx;
     // End of variables declaration//GEN-END:variables
 }
