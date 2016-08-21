@@ -164,7 +164,8 @@ public class Ejercicio1 extends javax.swing.JFrame {
             txtPersonaDos.requestFocusInWindow();
         
         }else if(txtPersonaTres.getText().trim().isEmpty()){
-            JOptionPane.showMessageDialog(this, "Digite Valor de la Persona Tres");
+            JOptionPane.showMessageDialog(this, "Digite Valor de la Persona Tres","ERROR",JOptionPane.ERROR_MESSAGE);
+            txtPersonaTres.requestFocusInWindow();
         }
         
       
@@ -181,7 +182,7 @@ public class Ejercicio1 extends javax.swing.JFrame {
             txtPersonaDos.requestFocusInWindow();
                 
             }
-            else if(p3==p1){JOptionPane.showMessageDialog(this, "Digite Un Valor Diferente En La Casilla", "ERROR",JOptionPane.ERROR_MESSAGE);
+            else if(p1==p3){JOptionPane.showMessageDialog(this, "Digite Un Valor Diferente En La Casilla", "ERROR",JOptionPane.ERROR_MESSAGE);
             txtPersonaTres.requestFocusInWindow();
                 
             }else{
@@ -193,8 +194,6 @@ public class Ejercicio1 extends javax.swing.JFrame {
         op2=(p2*100)/res;
         op3=(p3*100)/res;
         
-        
-    
                 }
         
         cant=String.valueOf(res);
