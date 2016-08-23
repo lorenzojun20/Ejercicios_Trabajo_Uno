@@ -152,108 +152,103 @@ public class Ejercicio1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
-        String cant,res1,res2,res3;
-        double p1,p2,p3,res=0,op1=0,op2=0,op3=0; 
-        
-        if(txtPersonaUno.getText().trim().isEmpty()){
-            JOptionPane.showMessageDialog(this, "Digite Valor de la Persona Uno", "Error",JOptionPane.ERROR_MESSAGE);
+        String cant, res1, res2, res3;
+        double p1, p2, p3, res = 0, op1 = 0, op2 = 0, op3 = 0;
+
+        if (txtPersonaUno.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite Valor de la Persona Uno", "Error", JOptionPane.ERROR_MESSAGE);
             txtPersonaUno.requestFocusInWindow();
-        }
-        else if(txtPersonaDos.getText().trim().isEmpty()){
+        } else if (txtPersonaDos.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Digite Valor de la Persona Dos", "Error", JOptionPane.ERROR_MESSAGE);
             txtPersonaDos.requestFocusInWindow();
-        
-        }else if(txtPersonaTres.getText().trim().isEmpty()){
-            JOptionPane.showMessageDialog(this, "Digite Valor de la Persona Tres","ERROR",JOptionPane.ERROR_MESSAGE);
+
+        } else if (txtPersonaTres.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite Valor de la Persona Tres", "ERROR", JOptionPane.ERROR_MESSAGE);
             txtPersonaTres.requestFocusInWindow();
-        }
-        
-      
-        else{  
-        p1=Double.parseDouble(txtPersonaUno.getText());
-        p2=Double.parseDouble(txtPersonaDos.getText());
-        p3=Double.parseDouble(txtPersonaTres.getText());
-        
-            
-        if(p2==p1){JOptionPane.showMessageDialog(this, "Digite Un Valor Diferente En La Casilla", "ERROR", JOptionPane.ERROR_MESSAGE);
+        } else {
+            p1 = Double.parseDouble(txtPersonaUno.getText());
+            p2 = Double.parseDouble(txtPersonaDos.getText());
+            p3 = Double.parseDouble(txtPersonaTres.getText());
+
+            if (p2 == p1) {
+                JOptionPane.showMessageDialog(this, "Digite Un Valor Diferente En La Casilla", "ERROR", JOptionPane.ERROR_MESSAGE);
                 txtPersonaUno.requestFocusInWindow();
+            } else if (p3 == p2) {
+                JOptionPane.showMessageDialog(this, "Digite Un Valor Diferente En la Casilla ", "ERROR", JOptionPane.ERROR_MESSAGE);
+                txtPersonaDos.requestFocusInWindow();
+
+            } else if (p1 == p3) {
+                JOptionPane.showMessageDialog(this, "Digite Un Valor Diferente En La Casilla", "ERROR", JOptionPane.ERROR_MESSAGE);
+                txtPersonaTres.requestFocusInWindow();
+
+            } else {
+
             }
-            else if(p3==p2){JOptionPane.showMessageDialog(this, "Digite Un Valor Diferente En la Casilla ", "ERROR",JOptionPane.ERROR_MESSAGE);
-            txtPersonaDos.requestFocusInWindow();
-                
-            }
-            else if(p1==p3){JOptionPane.showMessageDialog(this, "Digite Un Valor Diferente En La Casilla", "ERROR",JOptionPane.ERROR_MESSAGE);
-            txtPersonaTres.requestFocusInWindow();
-                
-            }else{
-                
-                
-            }
-        res=p1+p2+p3;
-        op1=(p1*100)/res;
-        op2=(p2*100)/res;
-        op3=(p3*100)/res;
-        
-                }
-        
-        cant=String.valueOf(res);
+            res = p1 + p2 + p3;
+            op1 = (p1 * 100) / res;
+            op2 = (p2 * 100) / res;
+            op3 = (p3 * 100) / res;
+
+        }
+
+        cant = String.valueOf(res);
         txtCantidad.setText(cant);
-        res1=String.valueOf(op1+"%");
+        res1 = String.valueOf(op1 + "%");
         txtResPersonaUno.setText(res1);
-        res2=String.valueOf(op2+"%");
+        res2 = String.valueOf(op2 + "%");
         txtResPersonaDos.setText(res2);
-        res3=String.valueOf(op3+"%");
+        res3 = String.valueOf(op3 + "%");
         txtResPersonaTres.setText(res3);
-        
-        
+
+
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
     private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
-      txtPersonaUno.setText("");
-      txtPersonaDos.setText("");
-      txtPersonaTres.setText("");
-      txtCantidad.setText("");
-      txtResPersonaUno.setText("");
-      txtResPersonaDos.setText("");
-      txtResPersonaTres.setText("");
-      
-      txtPersonaUno.requestFocusInWindow();
-       
-       
+        txtPersonaUno.setText("");
+        txtPersonaDos.setText("");
+        txtPersonaTres.setText("");
+        txtCantidad.setText("");
+        txtResPersonaUno.setText("");
+        txtResPersonaDos.setText("");
+        txtResPersonaTres.setText("");
+
+        txtPersonaUno.requestFocusInWindow();
+
+
     }//GEN-LAST:event_cmdBorrarActionPerformed
 
     private void txtCantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadKeyTyped
-      
+
     }//GEN-LAST:event_txtCantidadKeyTyped
 
     private void txtPersonaUnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersonaUnoKeyTyped
-       char c=evt.getKeyChar(); 
-             
-         
-          if(!Character.isDigit(c)) { 
-              getToolkit().beep(); 
-               
-              evt.consume(); }
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
     }//GEN-LAST:event_txtPersonaUnoKeyTyped
 
     private void txtPersonaDosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersonaDosKeyTyped
-        char c=evt.getKeyChar(); 
-             
-         
-          if(!Character.isDigit(c)) { 
-              getToolkit().beep(); 
-               
-              evt.consume(); }
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
     }//GEN-LAST:event_txtPersonaDosKeyTyped
 
     private void txtPersonaTresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersonaTresKeyTyped
-       char c=evt.getKeyChar(); 
-             
-         
-          if(!Character.isDigit(c)) { 
-              getToolkit().beep(); 
-               
-              evt.consume(); }
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
     }//GEN-LAST:event_txtPersonaTresKeyTyped
 
     /**
